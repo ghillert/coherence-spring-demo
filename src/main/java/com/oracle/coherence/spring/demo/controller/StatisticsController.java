@@ -14,14 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-/*
- * Copyright (c) 2020, Oracle and/or its affiliates.
- *
- * Licensed under the Universal Permissive License v 1.0 as shown at
- * http://oss.oracle.com/licenses/upl.
- */
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tangosol.net.CacheFactory;
 import com.tangosol.net.cache.CacheStatistics;
 import com.tangosol.net.cache.NearCache;
 
@@ -41,7 +36,7 @@ public class StatisticsController {
 	@RequestMapping(path="/api/statistics/{cacheName}")
 	@GetMapping
 	public CacheStatistics getEvents(@PathVariable String cacheName) {
-		final NearCache<?, ?> nearCache = (NearCache<?, ?>) cacheManager.getCache(cacheName).getNativeCache();
+		final NearCache<?, ?> nearCache = (NearCache<?, ?>) CacheFactory.getCache(cacheName);
 
 		final CacheStatistics cacheStatistics = nearCache.getCacheStatistics();
 
@@ -51,6 +46,7 @@ public class StatisticsController {
 	@RequestMapping(path="/api/cache-names")
 	@GetMapping
 	public Collection<String> getCacheNames() {
+
 		return cacheManager.getCacheNames();
 	}
 }

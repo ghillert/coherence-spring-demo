@@ -12,21 +12,18 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import com.oracle.coherence.spring.CoherenceInstance;
 import com.oracle.coherence.spring.cache.CoherenceCacheManager;
+import com.oracle.coherence.spring.configuration.annotation.EnableCoherence;
+import com.tangosol.net.Coherence;
 
 @Configuration
 @Profile("!xml")
 @EnableCaching
+@EnableCoherence
 public class CacheConfiguration {
 
 	@Bean
-	public CoherenceInstance coherenceInstance() {
-		return new CoherenceInstance();
-	}
-
-	@Bean
-	public CacheManager cacheManager(CoherenceInstance coherenceInstance) {
+	public CacheManager cacheManager(Coherence coherenceInstance) {
 		return new CoherenceCacheManager(coherenceInstance);
 	}
 }

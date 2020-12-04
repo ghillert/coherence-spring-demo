@@ -18,7 +18,7 @@
 		<java.version>8</java.version>
 		<hibernate.version>5.2.17.Final</hibernate.version>
 		<coherence-spring.version>3.0.0-SNAPSHOT</coherence-spring.version>
-		<coherence.version>20.06.1</coherence.version>
+		<coherence.version>20.12-SNAPSHOT</coherence.version>
 	</properties>
 
 	<dependencies>
@@ -55,6 +55,11 @@
 		<dependency>
 			<groupId>com.oracle.coherence.ce</groupId>
 			<artifactId>coherence</artifactId>
+			<version>${coherence.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.coherence.ce</groupId>
+			<artifactId>coherence-metrics</artifactId>
 			<version>${coherence.version}</version>
 		</dependency>
 		<dependency>
