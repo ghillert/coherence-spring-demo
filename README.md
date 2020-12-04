@@ -1,7 +1,9 @@
 # Coherence Spring Demo
 
 [![Java CI with Maven](https://github.com/ghillert/coherence-spring-demo/workflows/Java%20CI%20with%20Maven/badge.svg?branch=main)](https://github.com/ghillert/coherence-spring-demo/actions) [![License](http://img.shields.io/badge/license-UPL%201.0-blue.svg)](https://oss.oracle.com/licenses/upl/)
+[![Chat with us on slack](https://img.shields.io/badge/Coherence-Join%20Slack-red)](https://join.slack.com/t/oraclecoherence/shared_invite/zt-9ufv220y-Leudk0o5ntgNV0xraa8DNw)
 [![Twitter Follow](https://img.shields.io/twitter/follow/OracleCoherence?style=social)](https://twitter.com/OracleCoherence)
+
 
 In this demo we are show-casing Coherence support for a Spring Boot
 application using the [Coherence Spring project](https://github.com/coherence-community/coherence-spring).
