@@ -8,9 +8,12 @@ package com.oracle.coherence.spring.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Profiles;
+
+import com.oracle.coherence.spring.boot.autoconfigure.CachingEnabledCondition;
 
 /**
  * Entry point to the Coherence Spring Demo Application.
@@ -24,12 +27,12 @@ import org.springframework.core.env.Profiles;
  *
  */
 @SpringBootApplication
-@Configuration
-@ImportResource(locations = "classpath:spring-applicationContext.xml")
-public class CoherenceSpringDemoApplication {
+@EnableCaching
+public class CoherenceSpringBootDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CoherenceSpringDemoApplication.class, args);
+		ConfigurableApplicationContext ctx = SpringApplication.run(CoherenceSpringBootDemoApplication.class, args);
+		new CachingEnabledCondition();
 	}
 
 }

@@ -4,12 +4,19 @@
 [![Chat with us on slack](https://img.shields.io/badge/Coherence-Join%20Slack-red)](https://join.slack.com/t/oraclecoherence/shared_invite/zt-9ufv220y-Leudk0o5ntgNV0xraa8DNw)
 [![Twitter Follow](https://img.shields.io/twitter/follow/OracleCoherence?style=social)](https://twitter.com/OracleCoherence)
 
-
-In this demo we are show-casing Coherence support for a Spring Boot
-application using the [Coherence Spring project](https://github.com/coherence-community/coherence-spring).
+In this demo we are show-casing Coherence support for Spring
+applications using the [Coherence Spring project](https://github.com/coherence-community/coherence-spring).
 
 In the initial version we start by providing an example of using Coherence for the
 Spring Caching abstraction.
+
+We provide 2 versions:
+
+- `coherence-spring-demo-classic` Provides a demo using Spring Framework without Spring Boot
+- `coherence-spring-demo-boot` Provide a demo using Spring Boot
+
+Both demos provide exactly the same functionality. All common code is in the
+`coherence-spring-demo-core` module.
 
 ## How to Run
 
@@ -17,7 +24,6 @@ Check out the project using [Git](https://git-scm.com/):
 
 ```bash
 git clone https://github.com/ghillert/coherence-spring-demo.git
-cd coherence-spring-demo
 ```
 
 Build the demo using [Maven](https://maven.apache.org/):
@@ -26,17 +32,16 @@ Build the demo using [Maven](https://maven.apache.org/):
 ./mvnw clean package
 ```
 
-Run the demo:
+**Run the Spring Boot Demo:**
 
 ```bash
-java -jar target/coherence-spring-demo-1.0.0-SNAPSHOT.jar
+java -jar coherence-spring-demo-boot/target/coherence-spring-demo-boot-1.0.0-SNAPSHOT.jar
 ```
 
-By default we are using Spring's Java configuration support. However, you can also
-run the example exclusively using Spring's XML support:
+**Run the Classic Spring Framework Demo:**
 
 ```bash
-java -jar target/coherence-spring-demo-1.0.0-SNAPSHOT.jar --spring.profiles.active=xml
+java -jar coherence-spring-demo-classic/target/coherence-spring-demo-classic-1.0.0-SNAPSHOT.jar
 ```
 
 Once started, the embedded database is empty. Let's create an event with 2 people added to them.

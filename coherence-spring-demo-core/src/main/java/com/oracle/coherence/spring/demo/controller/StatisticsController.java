@@ -46,7 +46,6 @@ public class StatisticsController {
 	@RequestMapping(path="/api/cache-names")
 	@GetMapping
 	public Collection<String> getCacheNames() {
-
 		return cacheManager.getCacheNames();
 	}
 }
