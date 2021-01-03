@@ -8,20 +8,10 @@ package com.oracle.coherence.spring.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.core.env.Profiles;
-
-import com.oracle.coherence.spring.boot.autoconfigure.CachingEnabledCondition;
 
 /**
- * Entry point to the Coherence Spring Demo Application.
- *
- * By default, the application will use Java Configuration classes in order to
- * configure the Spring Application Context. However, by activating the {@code XML}
- * profile ({@link Profiles}), the XML based configuration defined in
- * {@code spring-applicationContext.xml} is used instead.
+ * Entry point to the Coherence Spring Boot Demo Application.
  *
  * @author Gunnar Hillert
  *
@@ -31,8 +21,7 @@ import com.oracle.coherence.spring.boot.autoconfigure.CachingEnabledCondition;
 public class CoherenceSpringBootDemoApplication {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext ctx = SpringApplication.run(CoherenceSpringBootDemoApplication.class, args);
-		new CachingEnabledCondition();
+		SpringApplication.run(CoherenceSpringBootDemoApplication.class, args);
 	}
 
 }
